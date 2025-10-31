@@ -50,7 +50,7 @@ export default function Home() {
         <div className="w-full max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl sm:text-5xl tracking-tight text-black">About</h2>
           <p className="mt-6 text-sm sm:text-base leading-relaxed text-black/80 max-w-2xl mx-auto">
-            I’m Doug Erickson — a full-stack developer and Information Systems student at BYU’s Marriott School of Business. I’m passionate about creating modern, meaningful software that simplifies life and helps people connect.
+            I&apos;m James Erickson — a full-stack developer and Information Systems student at BYU&apos;s Marriott School of Business. I&apos;m passionate about creating modern, meaningful software that simplifies life and helps people connect.
           </p>
 
           <p className="mt-6 text-sm sm:text-base leading-relaxed text-black/80">Currently, I work on projects that blend technology, leadership, and impact:</p>
@@ -75,8 +75,6 @@ export default function Home() {
             Outside of work, I love playing tennis, riding my tandem bike with my wife, and spending time with friends.
           </p>
 
-          {/* Keep a hint of the prior bio for continuity */}
-          <p className="mt-8 text-xs text-black/60 max-w-2xl mx-auto">{personalInfo.bio}</p>
         </div>
       </section>
 
@@ -88,8 +86,8 @@ export default function Home() {
             <li className="py-5">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                 <div>
-                  <a href="https://tutorange.com" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">🧡 Tutorange</a>
-                  <p className="mt-1 text-xs sm:text-sm text-black/70">A full-stack tutoring platform for independent tutors and small teams. Users can create accounts, manage lessons, and handle payments through integrated Stripe checkout (cancellable). Built with React and .NET; strong end‑to‑end integration, auth, and persistence. Doug’s most recent and relevant full‑stack project.</p>
+                  <a href="https://tutorange.com" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">Tutorange</a>
+                  <p className="mt-1 text-xs sm:text-sm text-black/70">A full-stack tutoring platform for independent tutors and small teams. Users can create accounts, manage lessons, and handle payments through integrated Stripe checkout (cancellable). Built with React and .NET; strong end‑to‑end integration, auth, and persistence.</p>
                 </div>
                 <a href="https://tutorange.com" target="_blank" rel="noreferrer" className="text-xs text-black/60 hover:text-black hover:underline">tutorange.com</a>
               </div>
@@ -97,7 +95,7 @@ export default function Home() {
             <li className="py-5">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                 <div>
-                  <a href="https://humanconnectionprojectbyu.vercel.app/" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">🤝 Human Connection Project</a>
+                  <a href="https://humanconnectionprojectbyu.vercel.app/" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">Human Connection Project</a>
                   <p className="mt-1 text-xs sm:text-sm text-black/70">Developed for a BYU professor to support donations that fund BYU Pathway scholarships for students who later become employed. Features donation management and a clean, accessible UI with fast loads on Vercel.</p>
                 </div>
                 <a href="https://humanconnectionprojectbyu.vercel.app/" target="_blank" rel="noreferrer" className="text-xs text-black/60 hover:text-black hover:underline">humanconnectionprojectbyu.vercel.app</a>
@@ -106,7 +104,7 @@ export default function Home() {
             <li className="py-5">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                 <div>
-                  <a href="https://moneytobudget.com" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">💰 MoneyToBudget</a>
+                  <a href="https://moneytobudget.com" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">MoneyToBudget</a>
                   <p className="mt-1 text-xs sm:text-sm text-black/70">A personal budgeting app that makes financial tracking simple and meaningful. Originally featured Stripe subscriptions; now streamlined for personal/friends use. Includes daily expense tracking, visual summaries, and goal setting. Demonstrates practical .NET + React and backend deployment skills.</p>
                 </div>
                 <a href="https://moneytobudget.com" target="_blank" rel="noreferrer" className="text-xs text-black/60 hover:text-black hover:underline">moneytobudget.com</a>
@@ -115,7 +113,7 @@ export default function Home() {
             <li className="py-5">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
                 <div>
-                  <a href="https://talitha-tutors.vercel.app/" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">📚 Talitha Tutors</a>
+                  <a href="https://talitha-tutors.vercel.app/" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">Talitha Tutors</a>
                   <p className="mt-1 text-xs sm:text-sm text-black/70">A lightweight, elegant site for Talitha, a math education major. Highlights services, contact options, and scheduling in a clean, mobile‑optimized design. Emphasizes maintainability and user‑friendly structure; a good example of minimalist frontend work.</p>
                 </div>
                 <a href="https://talitha-tutors.vercel.app/" target="_blank" rel="noreferrer" className="text-xs text-black/60 hover:text-black hover:underline">talitha-tutors.vercel.app</a>
@@ -229,19 +227,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="min-h-screen flex items-center justify-center">
-        <div className="text-center px-6">
-          <p className="text-xs sm:text-sm tracking-[0.06em] text-black/70">CONTACT</p>
-          <div className="mt-3 space-y-2 text-sm">
-            <a href={`mailto:${contactInfo.email}`} className="text-black/80 hover:text-black">{contactInfo.email}</a>
-            <div className="flex items-center justify-center gap-6 text-black/70">
-              <a href={contactInfo.github} target="_blank" rel="noreferrer" className="hover:text-black">GitHub</a>
-              <a href={contactInfo.linkedin} target="_blank" rel="noreferrer" className="hover:text-black">LinkedIn</a>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
