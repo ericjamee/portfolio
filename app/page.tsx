@@ -1,13 +1,18 @@
 import { personalInfo, projects, skills, contactInfo, resumeInfo } from '@/data/siteData'
-import RotatingTitle from '@/components/RotatingTitle'
 
 export default function Home() {
   return (
     <div className="bg-offwhite">
       {/* Home */}
-      <section id="home" className="min-h-screen flex items-center justify-center">
-        <div className="text-center select-none">
-          <RotatingTitle />
+      <section id="home" className="relative w-full h-screen">
+        <img 
+          src="/images/JimHero.jpg" 
+          alt="James Erickson" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute bottom-0 left-0 right-0 pb-12 text-center">
+          <h1 className="text-4xl sm:text-6xl font-bold text-white tracking-wide">JAMES ERICKSON</h1>
+          <p className="text-lg sm:text-2xl text-white mt-2">FULL STACK DEVELOPER</p>
         </div>
       </section>
 
