@@ -227,6 +227,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact */}
+      <section id="contact" className="min-h-screen flex items-center justify-center">
+        <div className="text-center px-6">
+          <p className="text-xs sm:text-sm tracking-[0.06em] text-black/70">CONTACT</p>
+          <div className="mt-3 space-y-2 text-sm">
+            <a href={`mailto:${contactInfo.email}`} className="text-black/80 hover:text-black">{contactInfo.email}</a>
+            <div className="flex items-center justify-center gap-6 text-black/70">
+              <a href={contactInfo.github} target="_blank" rel="noreferrer" className="hover:text-black">GitHub</a>
+              <a href={contactInfo.linkedin} target="_blank" rel="noreferrer" className="hover:text-black">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom spacer */}
+      <div className="py-20"></div>
+
     </div>
   );
 }

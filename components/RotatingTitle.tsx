@@ -15,7 +15,7 @@ export default function RotatingTitle() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % titles.length);
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
