@@ -1,4 +1,5 @@
 import { personalInfo, projects, skills, contactInfo, resumeInfo } from '@/data/siteData'
+import RotatingTitle from '@/components/RotatingTitle'
 
 export default function Home() {
   return (
@@ -6,8 +7,7 @@ export default function Home() {
       {/* Home */}
       <section id="home" className="min-h-screen flex items-center justify-center">
         <div className="text-center select-none">
-          <p className="text-2xl sm:text-4xl text-black tracking-[0.06em]">FULL STACK DEVELOPER</p>
-          <p className="mt-2 text-sm sm:text-base text-black/70">(yep, the entire stack)</p>
+          <RotatingTitle />
         </div>
       </section>
 
