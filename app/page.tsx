@@ -8,11 +8,11 @@ export default function Home() {
         <img 
           src="/images/JimHero.jpg" 
           alt="James Erickson" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-bottom"
         />
-        <div className="absolute bottom-0 left-0 right-0 pb-12 text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold text-white tracking-wide">JAMES ERICKSON</h1>
-          <p className="text-lg sm:text-2xl text-white mt-2">FULL STACK DEVELOPER</p>
+        <div className="absolute bottom-0 left-0 right-0 pb-8 text-center px-4">
+          <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold text-white tracking-wide">JAMES ERICKSON</h1>
+          <p className="text-xl sm:text-3xl md:text-4xl text-white mt-2">FULL STACK DEVELOPER</p>
         </div>
       </section>
 
