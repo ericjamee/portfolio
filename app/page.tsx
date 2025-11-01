@@ -8,45 +8,11 @@ export default function Home() {
         <img 
           src="/images/JimHero.jpg" 
           alt="James Erickson" 
-          className="w-full h-full object-cover object-bottom"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'center 20%' }}
         />
         <div className="absolute bottom-0 left-0 right-0 pb-8 text-center px-4">
           <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold text-white tracking-wide">JAMES ERICKSON</h1>
-          <p className="text-xl sm:text-3xl md:text-4xl text-white mt-2">FULL STACK DEVELOPER</p>
-        </div>
-      </section>
-
-      {/* Photos grid (under first section) */}
-      <section id="photos" className="py-5 sm:py-6">
-        <div className="mx-auto max-w-7xl px-3 sm:px-6">
-          <h2 className="mb-3 sm:mb-4 text-center text-2xl sm:text-4xl tracking-[0.06em] text-black">James Erickson</h2>
-          <div
-            className="grid grid-cols-12 gap-2.5 sm:gap-3 auto-rows-[94px] sm:auto-rows-[128px] md:auto-rows-[153px] lg:auto-rows-[170px]"
-            aria-label="Personal photos gallery"
-          >
-            {/* Row 1 */}
-            <div className="col-span-12 md:col-span-6 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/DSCF2816-EDIT.jpg" alt="Bikes at sunset" className="h-full w-full object-cover" />
-            </div>
-            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/DSCF3035.jpg" alt="Wedding portrait" className="h-full w-full object-cover" />
-            </div>
-            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/DSCF4228.jpg" alt="Tandem bike ride" className="h-full w-full object-cover" />
-            </div>
-            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/IMG_1773.jpeg" alt="Selfie" className="h-full w-full object-cover" />
-            </div>
-
-            {/* Row 2 */}
-            <div className="col-span-12 md:col-span-6 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/IMG_3206.JPG" alt="Kayaking at sunset" className="h-full w-full object-cover" />
-            </div>
-            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/IMG_4103.jpg" alt="Portrait" className="h-full w-full object-cover" />
-            </div>
-            
-          </div>
         </div>
       </section>
 
@@ -80,6 +46,40 @@ export default function Home() {
             Outside of work, I love playing tennis, riding my tandem bike with my wife, and spending time with friends.
           </p>
 
+        </div>
+      </section>
+
+      {/* Photos grid */}
+      <section id="photos" className="py-5 sm:py-6">
+        <div className="mx-auto max-w-7xl px-3 sm:px-6">
+          <h2 className="mb-3 sm:mb-4 text-center text-2xl sm:text-4xl tracking-[0.06em] text-black">James Erickson</h2>
+          <div
+            className="grid grid-cols-12 gap-2.5 sm:gap-3 auto-rows-[94px] sm:auto-rows-[128px] md:auto-rows-[153px] lg:auto-rows-[170px]"
+            aria-label="Personal photos gallery"
+          >
+            {/* Row 1 */}
+            <div className="col-span-12 md:col-span-6 row-span-2 overflow-hidden rounded-sm">
+              <img src="/images/Photos-1-001/DSCF2816-EDIT.jpg" alt="Bikes at sunset" className="h-full w-full object-cover" />
+            </div>
+            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
+              <img src="/images/Photos-1-001/DSCF3035.jpg" alt="Wedding portrait" className="h-full w-full object-cover" />
+            </div>
+            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
+              <img src="/images/Photos-1-001/DSCF4228.jpg" alt="Tandem bike ride" className="h-full w-full object-cover" />
+            </div>
+            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
+              <img src="/images/Photos-1-001/IMG_1773.jpeg" alt="Selfie" className="h-full w-full object-cover" />
+            </div>
+
+            {/* Row 2 */}
+            <div className="col-span-12 md:col-span-6 row-span-2 overflow-hidden rounded-sm">
+              <img src="/images/Photos-1-001/IMG_3206.JPG" alt="Kayaking at sunset" className="h-full w-full object-cover" />
+            </div>
+            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
+              <img src="/images/Photos-1-001/IMG_4103.jpg" alt="Portrait" className="h-full w-full object-cover" />
+            </div>
+            
+          </div>
         </div>
       </section>
 
