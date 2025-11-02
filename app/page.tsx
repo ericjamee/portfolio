@@ -103,7 +103,7 @@ export default function Home() {
           >
             {/* Row 1 */}
             <div className="col-span-12 md:col-span-6 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/DSCF2816-EDIT.jpg" alt="Bikes at sunset" className="h-full w-full object-cover" />
+              <img src="/images/family.jpg" alt="Erickson family" className="h-full w-full object-cover" />
             </div>
             <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
               <img src="/images/Photos-1-001/DSCF3035.jpg" alt="Wedding portrait" className="h-full w-full object-cover" />
