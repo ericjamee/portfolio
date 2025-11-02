@@ -1,18 +1,62 @@
+"use client";
+
 import { personalInfo, projects, skills, contactInfo, resumeInfo } from '@/data/siteData'
+import { useState, useEffect } from 'react';
+
+const rotatingTitles = [
+  'INFORMATION SYSTEMS',
+  'SOFTWARE DEVELOPER',
+  'FULL STACK DEVELOPER',
+  'CREATOR'
+];
 
 export default function Home() {
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitleIndex((prev) => (prev + 1) % rotatingTitles.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="bg-offwhite">
       {/* Home */}
       <section id="home" className="relative w-full h-screen">
         <img 
-          src="/images/JimHero.jpg" 
+          src="/images/JamesHero.jpg" 
           alt="James Erickson" 
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center 20%' }}
         />
-        <div className="absolute bottom-0 left-0 right-0 pb-8 text-center px-4">
-          <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold text-white tracking-wide">JAMES ERICKSON</h1>
+        {/* Name in top right */}
+        <div className="absolute top-0 right-0 pt-4 pr-4 sm:pt-6 sm:pr-6 text-right">
+          <h1 className="text-white text-xl sm:text-2xl tracking-[0.08em] font-medium">JAMES ERICKSON</h1>
+        </div>
+        {/* View work in bottom left with animated arrow */}
+        <a 
+          href="#about" 
+          className="absolute bottom-0 left-0 pb-4 pl-4 sm:pb-6 sm:pl-6 flex items-center gap-2 text-white text-xl sm:text-2xl tracking-[0.08em] font-medium hover:opacity-90 transition-opacity"
+        >
+          <span>VIEW MY WORK</span>
+          <span className="inline-block animate-bounce">↓</span>
+        </a>
+        {/* Rotating title in bottom right */}
+        <div className="absolute bottom-0 right-0 pb-4 pr-4 sm:pb-6 sm:pr-6 text-right">
+          <div className="relative h-8 sm:h-10">
+            {rotatingTitles.map((title, index) => (
+              <p
+                key={index}
+                className={`absolute right-0 whitespace-nowrap text-white text-xl sm:text-2xl tracking-[0.08em] font-medium transition-opacity duration-500 ${
+                  index === currentTitleIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                {title}
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 
