@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="bg-offwhite">
       {/* Home */}
-      <section id="home" className="relative w-full h-screen">
+      <section id="home" className="relative w-full h-screen scroll-mt-24 sm:scroll-mt-28">
         <img 
           src="/images/JamesHero.jpg" 
           alt="James Erickson" 
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
         {/* View work in bottom left with animated arrow */}
         <a 
-          href="#about" 
+          href="#projects" 
           className="absolute bottom-0 left-0 pb-4 pl-4 sm:pb-6 sm:pl-6 flex items-center gap-2 text-white text-xl sm:text-2xl tracking-[0.08em] font-medium hover:opacity-90 transition-opacity"
         >
           <span>VIEW MY WORK</span>
@@ -61,40 +61,51 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="min-h-screen flex items-center justify-center">
-        <div className="w-full max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl sm:text-5xl tracking-tight text-black">About</h2>
-          <p className="mt-6 text-sm sm:text-base leading-relaxed text-black/80 max-w-2xl mx-auto">
-            I&apos;m James Erickson — a full-stack developer and Information Systems student at BYU&apos;s Marriott School of Business. I&apos;m passionate about creating modern, meaningful software that simplifies life and helps people connect.
+      <section id="about" className="min-h-screen flex items-center justify-center pt-16 sm:pt-24 scroll-mt-24 sm:scroll-mt-28">
+        <div className="w-full max-w-3xl mx-auto px-6 text-left">
+          <h2 className="text-3xl sm:text-5xl tracking-tight text-black text-center">About</h2>
+          
+          {/* Lead */}
+          <p className="mt-6 text-base sm:text-lg leading-relaxed text-black/80">
+            Hey there — I’m James Erickson, a full-stack developer and problem solver studying Information Systems at Brigham Young University. I love building tools that make life simpler, smarter, and more connected. Whether it’s developing a budgeting app that helps people take control of their finances, creating an AI-powered tutoring platform, or designing clean, intuitive websites, I’m driven by the mix of logic, creativity, and real impact that coding makes possible.
           </p>
 
-          <p className="mt-6 text-sm sm:text-base leading-relaxed text-black/80">Currently, I work on projects that blend technology, leadership, and impact:</p>
-
-          <ul className="mt-4 text-left max-w-2xl mx-auto space-y-3 text-sm sm:text-base leading-relaxed text-black/80">
-            <li>
-              <span className="font-medium">MTC Spanish Supervisor</span> — Lead a team of teachers and develop automations that streamline scheduling, attendance, and communication.
-            </li>
-            <li>
-              <span className="font-medium">Record Linking Lab</span> — Build React and .NET web applications that support family history research with Professor Joe Price.
-            </li>
-            <li>
-              <span className="font-medium">Engage Now Africa</span> — Contribute to literacy and teacher training initiatives in Sierra Leone and Ghana.
-            </li>
-          </ul>
-
-          <p className="mt-6 text-sm sm:text-base leading-relaxed text-black/80 max-w-2xl mx-auto">
-            My technical toolkit includes React, TypeScript, .NET (C#), PostgreSQL, Tailwind, Google Apps Script, and Nginx. I enjoy building scalable, purposeful systems that make a real difference.
+          {/* Stack */}
+          <p className="mt-5 text-base sm:text-lg leading-relaxed text-black/80">
+            I’ve worked across React, .NET, SQL, and cloud tools like AWS, Azure, Vercel, and Render. I enjoy taking projects from concept to polished product — both individually and on collaborative teams. I’m especially passionate about combining technology and purpose — building solutions that not only work well but also do good in the world.
           </p>
 
-          <p className="mt-6 text-sm sm:text-base leading-relaxed text-black/80 max-w-2xl mx-auto">
-            Outside of work, I love playing tennis, riding my tandem bike with my wife, and spending time with friends.
+          {/* Current work */}
+          <div className="mt-6">
+            <p className="text-base sm:text-lg leading-relaxed text-black/80">
+              Currently, I’m working on projects that blend technology, leadership, and impact:
+            </p>
+            <ul className="mt-3 space-y-3 text-base sm:text-lg leading-relaxed text-black/80">
+              <li>
+                <span className="font-medium">MTC Spanish Supervisor</span> — Lead a team of teachers and develop automations that streamline scheduling, attendance, and communication.
+              </li>
+              <li>
+                <span className="font-medium">Record Linking Lab</span> — Build React and .NET web applications that support family history research with Professor Price.
+              </li>
+              <li>
+                <span className="font-medium">Engage Now Africa</span> — Contribute to literacy and teacher training initiatives in Sierra Leone and Ghana.
+              </li>
+              <li>
+                <span className="font-medium">Notion Campus Leader</span> — Charged to spread Notion’s mission on BYU campus: “to make toolmaking ubiquitous, allowing everyone to customize the software they use every day to their exact needs.”
+              </li>
+            </ul>
+          </div>
+
+          {/* Personal */}
+          <p className="mt-6 text-base sm:text-lg leading-relaxed text-black/80">
+            Outside of code, I’m a husband, tennis player, cyclist, and teacher. I love exploring the outdoors around Provo, mentoring others, and spending time with family. My goal — in both career and life — is to create things that last, empower others, and reflect the values I live by: faith, integrity, and continual improvement.
           </p>
 
         </div>
       </section>
 
       {/* Photos grid */}
-      <section id="photos" className="py-5 sm:py-6">
+      <section id="photos" className="pt-16 sm:pt-24 pb-5 sm:pb-6 scroll-mt-24 sm:scroll-mt-28">
         <div className="mx-auto max-w-7xl px-3 sm:px-6">
           <h2 className="mb-3 sm:mb-4 text-center text-2xl sm:text-4xl tracking-[0.06em] text-black">James Erickson</h2>
           <div
@@ -128,7 +139,7 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="min-h-screen flex items-center justify-center">
+      <section id="projects" className="min-h-screen flex items-center justify-center pt-16 sm:pt-24 scroll-mt-24 sm:scroll-mt-28">
         <div className="w-full max-w-3xl px-6">
           <h2 className="text-center text-3xl sm:text-5xl tracking-tight text-black">Projects</h2>
           <ul className="mt-8 divide-y divide-black/10">
@@ -173,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* Resume */}
-      <section id="resume" className="min-h-screen flex items-center justify-center">
+      <section id="resume" className="min-h-screen flex items-center justify-center pt-16 sm:pt-24 scroll-mt-24 sm:scroll-mt-28">
         <div className="w-full max-w-3xl px-6">
           <h2 className="text-center text-3xl sm:text-5xl tracking-tight text-black">Resume</h2>
 
@@ -276,19 +287,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="min-h-screen flex items-center justify-center">
-        <div className="text-center px-6">
-          <p className="text-xs sm:text-sm tracking-[0.06em] text-black/70">CONTACT</p>
-          <div className="mt-3 space-y-2 text-sm">
-            <a href={`mailto:${contactInfo.email}`} className="text-black/80 hover:text-black">{contactInfo.email}</a>
-            <div className="flex items-center justify-center gap-6 text-black/70">
-              <a href={contactInfo.github} target="_blank" rel="noreferrer" className="hover:text-black">GitHub</a>
-              <a href={contactInfo.linkedin} target="_blank" rel="noreferrer" className="hover:text-black">LinkedIn</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact section removed; footer now serves as contact target */}
 
       {/* Bottom spacer */}
       <div className="py-20"></div>
