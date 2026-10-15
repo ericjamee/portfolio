@@ -1,34 +1,13 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
-  title: 'James Erickson | Full-Stack Developer',
-  description: 'Portfolio website of James Erickson, a full-stack developer specializing in React, .NET, Azure, and AWS.',
-  keywords: ['James Erickson', 'Full-Stack Developer', 'React', '.NET', 'Azure', 'AWS', 'BYU'],
+  metadataBase: new URL('https://jameseerickson.com'),
+  title: 'James Erickson | Business Systems, Automation & Product',
+  description: 'James Erickson builds reliable reporting pipelines, automates workflows, and develops useful software. Explore selected work in business systems, automation, and product delivery.',
+  openGraph: { title: 'James Erickson — Reliable systems. Practical results.', description: 'Business systems, process automation, and product delivery.', url: 'https://jameseerickson.com', type: 'website' },
 }
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${spaceGrotesk.className} bg-[#f9f7f3] text-black`}>
-        <div className="flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </div>
-      </body>
-    </html>
-  )
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a><Navbar /><main id="main">{children}</main><Footer /></body></html>
 }
-

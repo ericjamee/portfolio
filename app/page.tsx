@@ -1,297 +1,34 @@
-"use client";
-
-import { personalInfo, projects, skills, contactInfo, resumeInfo } from '@/data/siteData'
-import { useState, useEffect } from 'react';
-
-const rotatingTitles = [
-  'INFORMATION SYSTEMS',
-  'SOFTWARE DEVELOPER',
-  'FULL STACK DEVELOPER',
-  'CREATOR'
-];
+import Image from 'next/image'
+import { contactInfo, experience, capabilities } from '@/data/siteData'
 
 export default function Home() {
-  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  return <>
+    <section className="hero shell" id="home" aria-labelledby="hero-title">
+      <div className="hero-copy">
+        <p className="eyebrow"><span className="status-dot" /> Business systems · Automation · Product</p>
+        <h1 id="hero-title">Reliable systems.<br /><em>Practical results.</em></h1>
+        <p className="hero-intro">I’m James Erickson, an information systems professional focused on reporting, process automation, and software delivery. I turn business needs into reliable, maintainable solutions.</p>
+        <div className="button-row"><a className="button primary" href="#work">Explore my work <span aria-hidden="true">↘</span></a><a className="text-link" href={`mailto:${contactInfo.email}`}>Contact me <span aria-hidden="true">↗</span></a></div>
+        <p className="hero-note">Business systems · Process automation · Product delivery</p>
+      </div>
+      <div className="hero-visual">
+        <div className="portrait-frame"><Image src="/images/profile.jpg" alt="James Erickson" width={400} height={600} priority sizes="(max-width: 700px) 80vw, 360px" /><div className="portrait-caption"><strong>James Erickson</strong><span>Information Systems · BYU</span></div></div>
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTitleIndex((prev) => (prev + 1) % rotatingTitles.length);
-    }, 2500);
 
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="bg-offwhite">
-      {/* Home */}
-      <section id="home" className="relative w-full h-screen scroll-mt-24 sm:scroll-mt-28">
-        <img 
-          src="/images/JamesHero.jpg" 
-          alt="James Erickson" 
-          className="w-full h-full object-cover"
-          style={{ objectPosition: 'center 20%' }}
-        />
-        {/* Name in top right */}
-        <div className="absolute top-0 right-0 pt-4 pr-4 sm:pt-6 sm:pr-6 text-right">
-          <h1 className="text-white text-xl sm:text-2xl tracking-[0.08em] font-medium">JAMES ERICKSON</h1>
-        </div>
-        {/* View work in bottom left with animated arrow */}
-        <a 
-          href="#projects" 
-          className="absolute bottom-0 left-0 pb-4 pl-4 sm:pb-6 sm:pl-6 flex items-center gap-2 text-white text-xl sm:text-2xl tracking-[0.08em] font-medium hover:opacity-90 transition-opacity"
-        >
-          <span>VIEW MY WORK</span>
-          <span className="inline-block animate-bounce">↓</span>
-        </a>
-        {/* Rotating title in bottom right */}
-        <div className="absolute bottom-0 right-0 pb-4 pr-4 sm:pb-6 sm:pr-6 text-right">
-          <div className="relative h-8 sm:h-10">
-            {rotatingTitles.map((title, index) => (
-              <p
-                key={index}
-                className={`absolute right-0 whitespace-nowrap text-white text-xl sm:text-2xl tracking-[0.08em] font-medium transition-opacity duration-500 ${
-                  index === currentTitleIndex ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                {title}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="min-h-screen flex items-center justify-center pt-16 sm:pt-24 scroll-mt-24 sm:scroll-mt-28">
-        <div className="w-full max-w-3xl mx-auto px-6 text-left">
-          <h2 className="text-3xl sm:text-5xl tracking-tight text-black text-center">About</h2>
-          
-          {/* Lead */}
-          <p className="mt-6 text-base sm:text-lg leading-relaxed text-black/80">
-            Hey there — I’m James Erickson, a full-stack developer and problem solver studying Information Systems at Brigham Young University. I love building tools that make life simpler, smarter, and more connected. Whether it’s developing a budgeting app that helps people take control of their finances, creating an AI-powered tutoring platform, or designing clean, intuitive websites, I’m driven by the mix of logic, creativity, and real impact that coding makes possible.
-          </p>
-
-          {/* Stack */}
-          <p className="mt-5 text-base sm:text-lg leading-relaxed text-black/80">
-            I’ve worked across React, .NET, SQL, and cloud tools like AWS, Azure, Vercel, and Render. I enjoy taking projects from concept to polished product — both individually and on collaborative teams. I’m especially passionate about combining technology and purpose — building solutions that not only work well but also do good in the world.
-          </p>
-
-          {/* Current work */}
-          <div className="mt-6">
-            <p className="text-base sm:text-lg leading-relaxed text-black/80">
-              Currently, I’m working on projects that blend technology, leadership, and impact:
-            </p>
-            <ul className="mt-3 space-y-3 text-base sm:text-lg leading-relaxed text-black/80">
-              <li>
-                <span className="font-medium">MTC Spanish Supervisor</span> — Lead a team of teachers and develop automations that streamline scheduling, attendance, and communication.
-              </li>
-              <li>
-                <span className="font-medium">Record Linking Lab</span> — Build React and .NET web applications that support family history research with Professor Price.
-              </li>
-              <li>
-                <span className="font-medium">Engage Now Africa</span> — Contribute to literacy and teacher training initiatives in Sierra Leone and Ghana.
-              </li>
-              <li>
-                <span className="font-medium">Notion Campus Leader</span> — Charged to spread Notion’s mission on BYU campus: “to make toolmaking ubiquitous, allowing everyone to customize the software they use every day to their exact needs.”
-              </li>
-            </ul>
-          </div>
-
-          {/* Personal */}
-          <p className="mt-6 text-base sm:text-lg leading-relaxed text-black/80">
-            Outside of code, I’m a husband, tennis player, cyclist, and teacher. I love exploring the outdoors around Provo, mentoring others, and spending time with family. My goal — in both career and life — is to create things that last, empower others, and reflect the values I live by: faith, integrity, and continual improvement.
-          </p>
-
-        </div>
-      </section>
-
-      {/* Photos grid */}
-      <section id="photos" className="pt-16 sm:pt-24 pb-5 sm:pb-6 scroll-mt-24 sm:scroll-mt-28">
-        <div className="mx-auto max-w-7xl px-3 sm:px-6">
-          <h2 className="mb-3 sm:mb-4 text-center text-2xl sm:text-4xl tracking-[0.06em] text-black">James Erickson</h2>
-          <div
-            className="grid grid-cols-12 gap-2.5 sm:gap-3 auto-rows-[94px] sm:auto-rows-[128px] md:auto-rows-[153px] lg:auto-rows-[170px]"
-            aria-label="Personal photos gallery"
-          >
-            {/* Row 1 */}
-            <div className="col-span-12 md:col-span-6 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/family.jpg" alt="Erickson family" className="h-full w-full object-cover" />
-            </div>
-            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/DSCF3035.jpg" alt="Wedding portrait" className="h-full w-full object-cover" />
-            </div>
-            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/DSCF4228.jpg" alt="Tandem bike ride" className="h-full w-full object-cover" />
-            </div>
-            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/IMG_1773.jpeg" alt="Selfie" className="h-full w-full object-cover" />
-            </div>
-
-            {/* Row 2 */}
-            <div className="col-span-12 md:col-span-6 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/IMG_3206.JPG" alt="Kayaking at sunset" className="h-full w-full object-cover" />
-            </div>
-            <div className="col-span-6 md:col-span-3 row-span-2 overflow-hidden rounded-sm">
-              <img src="/images/Photos-1-001/IMG_4103.jpg" alt="Portrait" className="h-full w-full object-cover" />
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section id="projects" className="min-h-screen flex items-center justify-center pt-16 sm:pt-24 scroll-mt-24 sm:scroll-mt-28">
-        <div className="w-full max-w-3xl px-6">
-          <h2 className="text-center text-3xl sm:text-5xl tracking-tight text-black">Projects</h2>
-          <ul className="mt-8 divide-y divide-black/10">
-            <li className="py-5">
-              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                <div>
-                  <a href="https://tutorange.com" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">Tutorange</a>
-                  <p className="mt-1 text-xs sm:text-sm text-black/70">A full-stack tutoring platform for independent tutors and small teams. Users can create accounts, manage lessons, and handle payments through integrated Stripe checkout (cancellable). Built with React and .NET; strong end‑to‑end integration, auth, and persistence.</p>
-                </div>
-                <a href="https://tutorange.com" target="_blank" rel="noreferrer" className="text-xs text-black/60 hover:text-black hover:underline">tutorange.com</a>
-              </div>
-            </li>
-            <li className="py-5">
-              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                <div>
-                  <a href="https://humanconnectionprojectbyu.vercel.app/" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">Human Connection Project</a>
-                  <p className="mt-1 text-xs sm:text-sm text-black/70">Developed for a BYU professor to support donations that fund BYU Pathway scholarships for students who later become employed. Features donation management and a clean, accessible UI with fast loads on Vercel.</p>
-                </div>
-                <a href="https://humanconnectionprojectbyu.vercel.app/" target="_blank" rel="noreferrer" className="text-xs text-black/60 hover:text-black hover:underline">humanconnectionprojectbyu.vercel.app</a>
-              </div>
-            </li>
-            <li className="py-5">
-              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                <div>
-                  <a href="https://moneytobudget.com" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">MoneyToBudget</a>
-                  <p className="mt-1 text-xs sm:text-sm text-black/70">A personal budgeting app that makes financial tracking simple and meaningful. Originally featured Stripe subscriptions; now streamlined for personal/friends use. Includes daily expense tracking, visual summaries, and goal setting. Demonstrates practical .NET + React and backend deployment skills.</p>
-                </div>
-                <a href="https://moneytobudget.com" target="_blank" rel="noreferrer" className="text-xs text-black/60 hover:text-black hover:underline">moneytobudget.com</a>
-              </div>
-            </li>
-            <li className="py-5">
-              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                <div>
-                  <a href="https://talitha-tutors.vercel.app/" target="_blank" rel="noreferrer" className="text-sm sm:text-base text-black hover:underline">Talitha Tutors</a>
-                  <p className="mt-1 text-xs sm:text-sm text-black/70">A lightweight, elegant site for Talitha, a math education major. Highlights services, contact options, and scheduling in a clean, mobile‑optimized design. Emphasizes maintainability and user‑friendly structure; a good example of minimalist frontend work.</p>
-                </div>
-                <a href="https://talitha-tutors.vercel.app/" target="_blank" rel="noreferrer" className="text-xs text-black/60 hover:text-black hover:underline">talitha-tutors.vercel.app</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Resume */}
-      <section id="resume" className="min-h-screen flex items-center justify-center pt-16 sm:pt-24 scroll-mt-24 sm:scroll-mt-28">
-        <div className="w-full max-w-3xl px-6">
-          <h2 className="text-center text-3xl sm:text-5xl tracking-tight text-black">Resume</h2>
-
-          {/* Header */}
-          <div className="mt-6 text-center">
-            <p className="text-sm text-black">James Edwin Erickson</p>
-            <p className="mt-1 text-xs text-black/70">541-908-6020 · {contactInfo.email} · linkedin.com/in/JamesEdErickson</p>
-            <p className="sr-only">Full-Stack Developer</p>
-          </div>
-
-          {/* Summary */}
-          <div className="mt-6">
-            <p className="text-[11px] tracking-wide text-black/60">SUMMARY</p>
-            <p className="mt-2 text-sm text-black/80">Full-Stack Developer who enjoys building complete, high-quality applications from start to finish. I focus on creating software that’s fast, reliable, and user-friendly—combining solid engineering with thoughtful design. Experienced in React, .NET, and Azure, I deliver solutions that balance speed, scalability, and great user experience.</p>
-          </div>
-
-          {/* Education */}
-          <div className="mt-8">
-            <p className="text-[11px] tracking-wide text-black/60">EDUCATION</p>
-            <div className="mt-2 text-sm text-black/80">
-              <p>Brigham Young University — Marriott School of Business, Provo, Utah</p>
-              <p className="text-black/60 text-xs mt-1">B.S. Information Systems, Full-Stack Development Emphasis (STEM) · GPA 3.52 · Associate of Information Systems · BYU IS INTEX competition winner · Relevant coursework: Web Dev (React, .NET), DB Design & Management, Data Comms & Networking, IS Security & Controls, Project Management, Enterprise App Dev · Expected Jun 2026</p>
-            </div>
-          </div>
-
-          {/* Technical Skills */}
-          <div className="mt-8">
-            <p className="text-[11px] tracking-wide text-black/60">TECHNICAL SKILLS</p>
-            <ul className="mt-2 space-y-2 text-sm text-black/80">
-              <li><span className="text-black/60">Languages & Frameworks:</span> Python, C#, JavaScript, React, ASP.NET Core, HTML/CSS, SQL, VBA, Swift</li>
-              <li><span className="text-black/60">Web Development & UX:</span> React + Tailwind CSS, Secure auth, Stripe, Accessibility, UI/UX</li>
-              <li><span className="text-black/60">Backend & Databases:</span> PostgreSQL, MySQL, SQLite, REST APIs, Auth (cookies/sessions), ERD Modeling</li>
-              <li><span className="text-black/60">Cloud & Infrastructure:</span> Azure, AWS EC2, Render, Vercel, Nginx, Ubuntu, SSL, Static IPs</li>
-              <li><span className="text-black/60">Security & Cyber:</span> Encryption/Hashing, Nmap, VPN, Forensics</li>
-              <li><span className="text-black/60">AI & Automation:</span> OpenAI API, Prompt Engineering, GPT‑4o business apps, Cursor automation</li>
-              <li><span className="text-black/60">Version Control:</span> Git, GitHub (private/public, CI/CD)</li>
-            </ul>
-          </div>
-
-          {/* Project Experience */}
-          <div className="mt-8">
-            <p className="text-[11px] tracking-wide text-black/60">PROJECT EXPERIENCE</p>
-            <ul className="mt-2 space-y-3 text-sm text-black/80">
-              <li>Launched math tutoring website (React/.NET) with mobile-first design and scheduling tools — 2025</li>
-              <li>Built streaming platform (React + .NET + Azure) with ML models to predict preferences and boost engagement — 2025</li>
-              <li>Designed and deployed full-stack website (HTML/CSS, SQL, ERD, AWS EC2) — 1st Place — 2024</li>
-              <li>Developed budgeting app with Stripe, user auth, and custom API logic (React + .NET + Azure) — 2024</li>
-            </ul>
-          </div>
-
-          {/* Experience */}
-          <div className="mt-8">
-            <p className="text-[11px] tracking-wide text-black/60">EXPERIENCE</p>
-            <div className="mt-3 space-y-5">
-              <div>
-                <p className="text-sm text-black">Research Assistant and Web Developer · Record Linking Lab at BYU — Provo, UT <span className="text-black/60">(May 2024 – Present)</span></p>
-                <ul className="mt-2 list-disc list-inside text-sm text-black/80 space-y-1">
-                  <li>Built and deployed donor platform (React + .NET) enabling contributions that fund and employ African student researchers</li>
-                  <li>Designed responsive front-end and optimized accessibility</li>
-                  <li>Developed Khan Academy–style learning system with admin tools for course uploads and progress badges</li>
-                  <li>Partnered with faculty to ensure data security, accessibility, and scalability</li>
-                </ul>
-              </div>
-              <div>
-                <p className="text-sm text-black">Spanish Area Supervisor · Missionary Training Center — Provo, UT <span className="text-black/60">(May 2022 – Present)</span></p>
-                <ul className="mt-2 list-disc list-inside text-sm text-black/80 space-y-1">
-                  <li>Managed logistics and training for 15+ teachers weekly using Monday.com and Oracle</li>
-                  <li>Delivered weekly vision and pedagogy training; improved instructional consistency</li>
-                  <li>Led bi-weekly observations and demonstrations with targeted feedback</li>
-                </ul>
-              </div>
-              <div>
-                <p className="text-sm text-black">CEO/Founder · GoodAd Marketing — Provo, UT <span className="text-black/60">(Jan 2022 – Mar 2024)</span></p>
-                <ul className="mt-2 list-disc list-inside text-sm text-black/80 space-y-1">
-                  <li>Built no-code client sites; ran Facebook, Instagram, and Google Ads generating daily inbound leads</li>
-                  <li>Owned pricing strategy, optimization, and client onboarding</li>
-                </ul>
-              </div>
-              <div>
-                <p className="text-sm text-black">Volunteer Representative – Spanish · Church of Jesus Christ of Latter-day Saints — Montevideo, Uruguay <span className="text-black/60">(Oct 2019 – Oct 2021)</span></p>
-              </div>
-            </div>
-          </div>
-
-          {/* Other */}
-          <div className="mt-8">
-            <p className="text-[11px] tracking-wide text-black/60">OTHER SKILLS & ACHIEVEMENTS</p>
-            <ul className="mt-2 space-y-1 text-sm text-black/80">
-              <li>Eagle Scout, Boy Scouts of America</li>
-              <li>On-Campus Internship for Engage Now Africa – 2025; Notion Campus Leader for BYU – 2025</li>
-              <li>Enjoy tennis, biking and working on bikes, technical woodworking</li>
-            </ul>
-          </div>
-
-          {/* Download */}
-          <div className="mt-8 text-center">
-            <a href={resumeInfo.pdfUrl} className="inline-block text-sm px-4 py-2 rounded-lg bg-black text-offwhite hover:opacity-90" target="_blank" rel="noreferrer">Download PDF</a>
-            <p className="mt-2 text-[11px] text-black/60">Last updated {resumeInfo.lastUpdated}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact section removed; footer now serves as contact target */}
-
-      {/* Bottom spacer */}
-      <div className="py-20"></div>
-
-    </div>
-  );
+      </div>
+    </section>
+    <div className="proof-strip"><div className="shell proof-grid"><div><strong>3 weeks</strong><span>to rebuild a global reporting pipeline</span></div><div><strong>15 teachers</strong><span>supported through coaching & training</span></div><div><strong>1st place</strong><span>BYU IS INTEX competition · 2024</span></div></div></div>
+    <section className="section shell" id="work" aria-labelledby="work-title">
+      <div className="section-heading"><div><p className="eyebrow">01 / Selected work</p><h2 id="work-title">Selected projects<br />and contributions.</h2></div><p>Examples of delivering reporting systems, developing applications, and improving team operations.</p></div>
+      <article className="featured-project">
+        <div className="project-story"><p className="eyebrow">Reporting & automation / 2026</p><h3>Global reporting<br />and workflow automation.</h3><p>At the Church of Jesus Christ of Latter-day Saints, I rebuilt a reporting pipeline that brings GraphQL data into Dataverse and Power BI for area technology managers worldwide.</p><p>I automated weekly snapshots, reconciled the output against a legacy report, and resolved missing geographic data before documenting the system for handoff.</p><div className="project-result"><strong>Three weeks to deliver.</strong><span>Against an initial three-month estimate.</span></div><ul className="tags" aria-label="Technologies"><li>Power Automate</li><li>Dataverse</li><li>Power BI</li><li>GraphQL</li></ul></div>
+        <div className="pipeline-visual" aria-label="Reporting workflow: GraphQL source data flows into Dataverse, weekly automation, and Power BI reporting."><div className="diagram-top"><span>FROM DATA TO DECISIONS</span><span aria-hidden="true">↗</span></div><div className="pipeline-node"><span className="node-number">01</span><div><strong>Connect the source</strong><span>GraphQL → Dataverse</span></div><span aria-hidden="true">⌘</span></div><div className="pipeline-line" /><div className="pipeline-node"><span className="node-number">02</span><div><strong>Make it repeatable</strong><span>Weekly automation & snapshots</span></div><span aria-hidden="true">↻</span></div><div className="pipeline-line" /><div className="pipeline-node final-node"><span className="node-number">03</span><div><strong>Make it useful</strong><span>Power BI → area managers</span></div><span aria-hidden="true">▥</span></div><p className="diagram-foot">Connect. Validate. Automate. Document.</p><p className="diagram-disclaimer">Illustrative workflow · no internal data shown</p></div>
+      </article>
+      <div className="project-grid"><article className="project-card"><span className="card-index">02 / WEB APPLICATIONS</span><h3>Research platform development.</h3><p>Built and deployed a React/.NET donor platform supporting African student researchers, plus a learning platform with course-upload tools and progress badges at BYU’s Record Linking Lab.</p><p className="card-detail">Both platforms remain in use. Faculty and student feedback helped shape the experience.</p><ul className="tags"><li>React</li><li>C# / .NET</li><li>User feedback</li></ul></article><article className="project-card warm"><span className="card-index">03 / TEAM OPERATIONS</span><h3>Team leadership and operations.</h3><p>Led scheduling, coaching, and training for 15 Spanish teachers at the Missionary Training Center, using monday.com and Oracle to support daily operations.</p><p className="card-detail">Weekly training and biweekly observations kept feedback practical and consistent.</p><ul className="tags"><li>Team leadership</li><li>Training</li><li>Process improvement</li></ul></article></div>
+    </section>
+    <section className="capabilities-section" id="approach"><div className="shell section"><div className="section-heading"><div><p className="eyebrow">02 / How I work</p><h2>A disciplined approach<br />to systems delivery.</h2></div><p>I connect business requirements with technical implementation, with an emphasis on validation, documentation, and adoption.</p></div><div className="capability-grid">{capabilities.map((item, i) => <article key={item.title}><span className="capability-number">0{i + 1}</span><h3>{item.title}</h3><p>{item.description}</p><p className="tool-list">{item.tools}</p></article>)}</div></div></section>
+    <section className="section shell about-section" id="about"><div><p className="eyebrow">03 / Professional background</p><h2>Technical execution.<br /><em>Clear communication.</em></h2><p className="about-lead">My work combines systems development, process improvement, and stakeholder collaboration.</p><p>I’m studying Information Systems Management at BYU’s Marriott School of Business, with graduation expected in December 2026. My experience spans reporting automation, full-stack development, and leading a team of teachers.</p><p>Outside work, you’ll usually find me playing tennis, working on a bike, or spending time with my wife and family.</p><a className="text-link" href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer">More on LinkedIn <span aria-hidden="true">↗</span></a></div><div className="experience-list"><p className="eyebrow">Experience, at a glance</p>{experience.map(item => <article key={item.company}><span>{item.dates}</span><h3>{item.title}</h3><p>{item.company}</p></article>)}<div className="education-note"><strong>Brigham Young University</strong><span>Bachelor of Information Systems Management</span><span>Expected December 2026 · GPA 3.5</span></div></div></section>
+    <section className="resume-section shell" id="resume"><div><p className="eyebrow">04 / The details</p><h2>Experience and qualifications.</h2><p>Explore my experience through the lens most relevant to your team.</p></div><div className="resume-links"><a href="/files/James_Erickson_Business_Systems_Analyst.pdf" target="_blank" rel="noopener noreferrer">Business Systems Analyst <span>PDF ↗</span></a><a href="/files/James_Erickson_Business_Process_AI_Automation_Analyst.pdf" target="_blank" rel="noopener noreferrer">Process & AI Automation <span>PDF ↗</span></a><a href="/files/James_Erickson_Product_Manager.pdf" target="_blank" rel="noopener noreferrer">Product Management <span>PDF ↗</span></a></div></section>
+    <section className="contact-section" id="contact"><div className="shell"><p className="eyebrow">Contact</p><h2>Let’s discuss<br /><em>your team’s needs.</em></h2><a className="contact-email" href={`mailto:${contactInfo.email}`}>{contactInfo.email} <span aria-hidden="true">↗</span></a><div className="contact-socials"><a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href={contactInfo.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a><span>Based in Provo, Utah</span></div></div></section>
+  </>
 }
